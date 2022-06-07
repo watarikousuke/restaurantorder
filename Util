@@ -28,13 +28,6 @@ public class Util {
 		//注文料金の定義（最初は0円）
 		int amount = 0; 
 		//商品の表示
-		System.out.println("1."+menu1.name+"　"+menu1.price+"円");
-		System.out.println("2."+menu2.name+"　"+menu2.price+"円");
-		System.out.println("3."+menu3.name+"　"+menu3.price+"円");
-		System.out.println("4."+menu4.name+"　"+menu4.price+"円");
-		System.out.println("5."+menu5.name+"　"+menu5.price+"円");
-		System.out.println("6."+menu6.name+"　"+menu6.price+"円");
-		System.out.println(" ");
 		boolean orderFinish = false; //注文終了フラグ、終了時にtrue 
 		while ( orderFinish == false ) {
 			System.out.print("注文したいメニューの番号を入力してください。(1-6,0入力で終了)");
@@ -103,10 +96,8 @@ public class Util {
 		}
 	}
 	if ( orderFinal == 0 ) {
-		System.out.println("注文が送信されました。");
 		return true;
 	} else {
-		System.out.println("お手数ですが初めからやり直してください。");
 		return false;
 	}
 }
