@@ -10,13 +10,32 @@ package restaurantorder;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
+	
 	// 
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		Util menu1 = new Util(1,"生姜焼き定食",580);
+		Util menu2 = new Util(2, "ハンバーグ定食", 680);
+		Util menu3 = new Util(3, "唐揚げ定食", 680);
+		Util menu4 = new Util(4, "オムライス", 580);
+		Util menu5 = new Util(5, "親子丼", 580);
+		Util menu6 = new Util(6, "カレーライス", 480);
+		System.out.println("1."+menu1.name+"　"+menu1.price+"円");
+		System.out.println("2."+menu2.name+"　"+menu2.price+"円");
+		System.out.println("3."+menu3.name+"　"+menu3.price+"円");
+		System.out.println("4."+menu4.name+"　"+menu4.price+"円");
+		System.out.println("5."+menu5.name+"　"+menu5.price+"円");
+		System.out.println("6."+menu6.name+"　"+menu6.price+"円");
+		System.out.println(" ");
 		int amountFinal = Util.exe(0);
 		boolean orderFinish = Util.check(0);
+		if ( orderFinish == true) {
+			System.out.println("注文が送信されました。");
+		} else {
+			System.out.println("お手数ですが初めからやり直してください。");
+		}
 	}
 }
