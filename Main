@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package restaurantorder;
+
+/**
+ * @author watar
+ *
+ */
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Main {
+	// 
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int amountFinal = Util.exe(0);
+		boolean orderFinish = Util.check(0);
+	}
+}
