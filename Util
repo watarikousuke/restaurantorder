@@ -15,7 +15,7 @@ public class Util {
 	}
 		
 		//商品の表示
-	public static void order(int n) {
+	public static int order(int n) {
 		//商品の定義
 		Util menu1 = new Util(1,"生姜焼き定食",580);
 		Util menu2 = new Util(2, "ハンバーグ定食", 680);
@@ -51,8 +51,8 @@ public class Util {
 				break;
 			case 5: 
 				System.out.println(menu5.name+"を注文します。"+menu5.price+"円です");
-				amount = amount + menu6.price;
-				basket.add(menu6.name);
+				amount = amount + menu5.price;
+				basket.add(menu5.name);
 				break;
 			case 6: 
 				System.out.println(menu6.name+"を注文します。"+menu6.price+"円です");
@@ -60,5 +60,6 @@ public class Util {
 				basket.add(menu6.name);
 				break;
 			}
+		return +amount;
 		}
 }
