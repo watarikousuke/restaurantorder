@@ -13,8 +13,9 @@ public class Util {
 		this.name = name;
 		this.price = price;
 	}
-	
-	public static int exe(int a) {
+		
+		//商品の表示
+	public static void order(int n) {
 		//商品の定義
 		Util menu1 = new Util(1,"生姜焼き定食",580);
 		Util menu2 = new Util(2, "ハンバーグ定食", 680);
@@ -25,80 +26,39 @@ public class Util {
 		//注文かごの定義
 		ArrayList<String> basket = new ArrayList<String>(); 
 		Scanner scanner = new Scanner(System.in);
-		//注文料金の定義（最初は0円）
-		int amount = 0; 
-		//商品の表示
-		boolean orderFinish = false; //注文終了フラグ、終了時にtrue 
-		while ( orderFinish == false ) {
-			System.out.print("注文したいメニューの番号を入力してください。(1-6,0入力で終了)");
-			System.out.println(" ");
-			int n = scanner.nextInt();
-			switch (n) {
-				case 1: 
-					System.out.println(menu1.name+"を注文します。"+menu1.price+"円です");
-					amount = amount + menu1.price;
-					basket.add(menu1.name);
-					break;
-				case 2: 
-					System.out.println(menu2.name+"を注文します。"+menu2.price+"円です");
-					amount = amount + menu2.price;
-					basket.add(menu2.name);
-					break;
-				case 3: 
-					System.out.println(menu3.name+"を注文します。"+menu3.price+"円です");
-					amount = amount + menu3.price;
-					basket.add(menu3.name);
-					break;
-				case 4: 
-					System.out.println(menu4.name+"を注文します。"+menu4.price+"円です");
-					amount = amount + menu4.price;
-					basket.add(menu4.name);
-					break;
-				case 5: 
-					System.out.println(menu5.name+"を注文します。"+menu5.price+"円です");
-					amount = amount + menu6.price;
-					basket.add(menu6.name);
-					break;
-				case 6: 
-					System.out.println(menu6.name+"を注文します。"+menu6.price+"円です");
-					amount = amount + menu6.price;
-					basket.add(menu6.name);
-					break;
-				case 0://注文の決定
-					System.out.println(basket +"を注文します");
-					System.out.println("合計金額は"+amount+"円です。");
-					orderFinish = true;
-					break;
-				default:
-					System.out.println("正しい注文番号を入力してください");
-					System.out.println(" ");
-					break;
+		//注文料金の定義（最初は0円） 
+		int amount = 0;
+		switch (n) {
+			case 1: 
+				System.out.println(menu1.name+"を注文します。"+menu1.price+"円です");
+				amount = amount + menu1.price;
+				basket.add(menu1.name);
+				break;
+			case 2: 
+				System.out.println(menu2.name+"を注文します。"+menu2.price+"円です");
+				amount = amount + menu2.price;
+				basket.add(menu2.name);
+				break;
+			case 3: 
+				System.out.println(menu3.name+"を注文します。"+menu3.price+"円です");
+				amount = amount + menu3.price;
+				basket.add(menu3.name);
+				break;
+			case 4: 
+				System.out.println(menu4.name+"を注文します。"+menu4.price+"円です");
+				amount = amount + menu4.price;
+				basket.add(menu4.name);
+				break;
+			case 5: 
+				System.out.println(menu5.name+"を注文します。"+menu5.price+"円です");
+				amount = amount + menu6.price;
+				basket.add(menu6.name);
+				break;
+			case 6: 
+				System.out.println(menu6.name+"を注文します。"+menu6.price+"円です");
+				amount = amount + menu6.price;
+				basket.add(menu6.name);
+				break;
 			}
-		
 		}
-	return +amount;
-	}
-	
-	public static boolean check(int amountFinal) {
-	int orderFinal = -1;
-	Scanner scanner = new Scanner(System.in);
-	while (!(orderFinal ==0 || orderFinal ==1)) {
-		System.out.println("よろしいですか？");
-		System.out.println(" ");
-		System.out.print("0.はい、1.いいえ：");
-		System.out.println(" ");
-		orderFinal = scanner.nextInt();
-		if (!(orderFinal ==0 || orderFinal ==1)) {
-			System.out.println("正しい数値を入力してください。");
-			System.out.println(" ");
-		} else {
-			break;
-		}
-	}
-	if ( orderFinal == 0 ) {
-		return true;
-	} else {
-		return false;
-	}
-}
 }
