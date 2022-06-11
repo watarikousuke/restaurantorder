@@ -33,39 +33,36 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		boolean orderFinish = false;
 		while ( orderFinish == false ) {
-			System.out.print("注文したいメニューの番号を入力してください。(1-6,0入力で終了)");
+			System.out.print("注文したいメニューの番号を入力してください。(1-6)");
 			System.out.println(" ");
 			int n = scanner.nextInt();
 			if (n >= 1 && n <= 6) {
 				Util.order(n);
-			} else if ( n == 0 ) {
-				System.out.println(Util.basket+"を注文します");//Util.basketに注文かごの情報を入れたいがうまくいかない
-				System.out.println("合計金額は"+Util.order(amount)+"円です。");//Uril.order(amount)に注文合計金額の受け取りがうまくいかない
-				orderFinish = true;
 				break;
 			} else {
 				System.out.println("正しい注文番号を入力してください。");
 			}
+			int amountFinal = Util.order(0);
 		}
 		int orderFinal = -1;
-		while (!(orderFinal ==0 || orderFinal ==1)) {
+		while ( orderFinish == false ) {
 			System.out.println("よろしいですか？");
 			System.out.println(" ");
 			System.out.print("0.はい、1.いいえ：");
 			System.out.println(" ");
 			orderFinal = scanner.nextInt();
-			if (!(orderFinal ==0 || orderFinal ==1)) {
+			if ( orderFinal == 0) { 
+				System.out.println("注文が送信されました。");
+				System.out.println(" ");
+				orderFinish = true;
+			} else if ( orderFinal == 1) {
+				System.out.println("お手数ですが初めからやり直してください。");
+				System.out.println(" ");
+				break;
+			} else {
 				System.out.println("正しい数値を入力してください。");
 				System.out.println(" ");
-			} else {
-				break;
 			}
-		if ( orderFinish == true) {
-			System.out.println("注文が送信されました。");
-		} else {
-			System.out.println("お手数ですが初めからやり直してください。");
-		}
-		
 			
 		}
 	}
