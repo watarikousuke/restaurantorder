@@ -26,40 +26,34 @@ public class Util {
 		//注文かごの定義
 		ArrayList<String> basket = new ArrayList<String>(); 
 		Scanner scanner = new Scanner(System.in);
-		//注文料金の定義（最初は0円） 
+		//注文料金の定義 
 		int amount = 0;
 		switch (n) {
-			case 1: 
-				System.out.println(menu1.name+"を注文します。"+menu1.price+"円です");
-				amount = amount + menu1.price;
+			case 1:
+				amount = menu1.price;
 				basket.add(menu1.name);
 				break;
 			case 2: 
-				System.out.println(menu2.name+"を注文します。"+menu2.price+"円です");
-				amount = amount + menu2.price;
+				amount = menu2.price;
 				basket.add(menu2.name);
 				break;
 			case 3: 
-				System.out.println(menu3.name+"を注文します。"+menu3.price+"円です");
-				amount = amount + menu3.price;
+				amount = menu3.price;
 				basket.add(menu3.name);
 				break;
 			case 4: 
-				System.out.println(menu4.name+"を注文します。"+menu4.price+"円です");
-				amount = amount + menu4.price;
+				amount = menu4.price;
 				basket.add(menu4.name);
 				break;
 			case 5: 
-				System.out.println(menu5.name+"を注文します。"+menu5.price+"円です");
-				amount = amount + menu5.price;
+				amount = menu5.price;
 				basket.add(menu5.name);
 				break;
 			case 6: 
-				System.out.println(menu6.name+"を注文します。"+menu6.price+"円です");
-				amount = amount + menu6.price;
+				amount = menu6.price;
 				basket.add(menu6.name);
 				break;
 			}
-		return +amount;
+		return n = amount;
 		}
 }
