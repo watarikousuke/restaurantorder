@@ -37,12 +37,25 @@ public class Main {
 			System.out.println(" ");
 			int n = scanner.nextInt();
 			if (n >= 1 && n <= 6) {
-				Util.order(n);
+				int amountFinal = Util.order(n);
+				switch (n) {
+					case 1:System.out.println(menu1.name+"を注文します。"+menu1.price+"円です");
+					break;
+					case 2:System.out.println(menu2.name+"を注文します。"+menu2.price+"円です");
+					break;
+					case 3:System.out.println(menu3.name+"を注文します。"+menu3.price+"円です");
+					break;
+					case 4:System.out.println(menu4.name+"を注文します。"+menu4.price+"円です");
+					break;
+					case 5:System.out.println(menu5.name+"を注文します。"+menu5.price+"円です");
+					break;
+					case 6:System.out.println(menu6.name+"を注文します。"+menu6.price+"円です");
+					break;
+				}
 				break;
 			} else {
 				System.out.println("正しい注文番号を入力してください。");
 			}
-			int amountFinal = Util.order(0);
 		}
 		int orderFinal = -1;
 		while ( orderFinish == false ) {
