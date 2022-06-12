@@ -25,7 +25,6 @@ public class Util {
 		Util menu6 = new Util(6, "カレーライス", 480);
 		//注文かごの定義
 		ArrayList<String> basket = new ArrayList<String>(); 
-		Scanner scanner = new Scanner(System.in);
 		//注文料金の定義 
 		int amount = 0;
 		switch (n) {
@@ -54,6 +53,6 @@ public class Util {
 				basket.add(menu6.name);
 				break;
 			}
-		return n = amount;
+		return amount;
 		}
 }
